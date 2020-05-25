@@ -1,0 +1,14 @@
+# creating and runing the containers
+docker run -d -p 4444:4444 --name selenium-hub selenium/hub
+docker run -d --name selenium-chrome [-p 5900:5900] --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome-debug
+docker run -d --name selenium-firefox -p 5901:5900 --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-firefox-debug
+
+# whithout docker
+# create a hub
+java -jar selenium-server-standalone-4.0.0-alpha-2.jar -role hub [-port 4444]
+
+# create a node
+
+java -jar selenium-server-standalone-4.0.0-alpha-2.jar [-role node] [-browser browserName=chrome] [-hub http://localhost:4444/grid/register]
+
+# NOTE: the values between [] are optionals their values are the default ones
