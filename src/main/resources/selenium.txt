@@ -9,6 +9,6 @@ java -jar selenium-server-standalone-4.0.0-alpha-2.jar -role hub [-port 4444]
 
 # create a node
 
-java -jar selenium-server-standalone-4.0.0-alpha-2.jar [-role node] [-browser browserName=chrome] [-hub http://localhost:4444/grid/register]
+java -jar selenium-server-standalone-4.0.0-alpha-2.jar -role node [-browser browserName=chrome] [-hub http://localhost:4444/grid/register]
 
 # NOTE: the values between [] are optionals their values are the default ones
