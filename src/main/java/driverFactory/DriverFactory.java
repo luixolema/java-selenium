@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteExecuteMethod;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.html5.RemoteLocalStorage;
+import org.openqa.selenium.support.ThreadGuard;
 
 import javax.annotation.Nullable;
 import java.net.URL;
@@ -21,6 +22,8 @@ public class DriverFactory {
 
         RemoteWebDriver driver = new RemoteWebDriver(new URL(AppConfig.REMOTE_HUB_URL), capabilities );
         driver.manage().timeouts().implicitlyWait(AppConfig.IMPLICIT_WAIT, TimeUnit.SECONDS);
+
+        ThreadGuard.protect(driver);
 
         return driver;
     }

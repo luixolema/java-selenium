@@ -1,7 +1,7 @@
 # creating and runing the containers
 docker run -d -p 4444:4444 --name selenium-hub selenium/hub
 docker run -d --name selenium-chrome [-p 5900:5900] --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-chrome-debug
-docker run -d --name selenium-firefox -p 5901:5900 --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-firefox-debug
+docker run -d --name selenium-firefox -p 5901:5901 --link selenium-hub:hub -v /dev/shm:/dev/shm selenium/node-firefox-debug
 
 # whithout docker
 # create a hub

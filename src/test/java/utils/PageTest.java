@@ -21,7 +21,7 @@ public abstract class PageTest {
     protected Logger logger = Logger.getLogger(PageTest.class);
     private DesiredCapabilities capabilities;
 
-    @BeforeTest
+    @BeforeClass
     @Parameters({"browser"})
     public void configCapabilities(String browser){
         capabilities = new DesiredCapabilities();
