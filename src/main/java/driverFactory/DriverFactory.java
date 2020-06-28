@@ -1,6 +1,7 @@
 package driverFactory;
 
 import config.AppConfig;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.html5.LocalStorage;
 import org.openqa.selenium.remote.BrowserType;
@@ -32,6 +33,7 @@ public class DriverFactory {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setBrowserName(AppConfig.DEFAULT_BROWSER);
+        capabilities.setPlatform(Platform.ANY);
 
         return  capabilities;
     }
